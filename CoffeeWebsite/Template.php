@@ -113,7 +113,7 @@
                 <div class="carousel-inner">                   
                     <div class="item active">
                         <div class="row">                        
-                          <?php echo($itemsmenu) ?>       
+                          <?php echo($itemsmenu1) ?>       
                         </div>
                     </div>
                      <div class="item">
@@ -130,23 +130,54 @@
                  <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
                  <a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div> 
-            
-            </div>
+        </div>  
+       
         <div class="container marketing">
              <h2 class="itemsTitle">Vegetables &amp; Fruits</h2>
       
             <div id="myCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">                   
-                    
+                    <div class="item active">
+                        <div class="row">                        
+                          <?php echo($itemsmenu4) ?>       
+                        </div>
+                    </div>
+                     <div class="item">
+                        <div class="row">                        
+                          <?php echo($itemsmenu5) ?>       
+                        </div>
+                    </div>
+                      <div class="item">
+                        <div class="row">                        
+                          <?php echo($itemsmenu6) ?>       
+                        </div>
+                    </div>
                  </div> 
                  <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
                  <a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div> 
            
-            </div>
         </div>
-         <?php echo $formend; ?>  
+        <div class="container marketing">
+             <h2 class="itemsTitle">Meats</h2>
+      
+            <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">                   
+                    <div class="item active">
+                        <div class="row">                        
+                          <?php echo($itemsmenu7) ?>       
+                        </div>
+                    </div>
+                     
+                 </div> 
+               
+                </div> 
+           
         </div>
+       <?php echo $formend; ?>  
+       </div> 
+         
+    
     
 	<div class="highlightSection">
 	<div class="container">
