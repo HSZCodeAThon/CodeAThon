@@ -63,8 +63,25 @@ class ItemModel {
         }
         //Close connection and return result
         mysql_close();
-        return $item;
-   
+        return $item;   
+    }
+    
+    function GetItemsCategoryArrayFromTable() {
+        require ('Credentials.php');
+        //Open connection and Select database.   
+        mysql_connect($host, $user, $passwd) or die(mysql_error());
+        mysql_select_db($shopdb);
+        $result = mysql_query("SELECT DISTINCT category FROM wholeitemsset") or die(mysql_error());
+        $categ = array();
+
+        //Get data from database.
+        while ($row = mysql_fetch_array($result)) {
+            array_push($categ, $row[0]);
+        }
+
+        //Close connection and return result.
+        mysql_close();
+        return $categ;
     }
 }
 

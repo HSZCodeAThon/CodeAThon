@@ -5,10 +5,12 @@ require 'Model/ItemModel.php';
 $myItemModel = new ItemModel();
 $item_name_array = array();
 $itemurl_array = array();
+$item_type_array = array();
 $item_name_array =  $myItemModel->GetItemsNameArrayFromTable();
+$item_type_array = $myItemModel->GetItemsCategoryArrayFromTable();
 $array_len = 0;
-foreach ($item_name_array as $myname){
-    //echo($myname);
+foreach ($item_type_array as $mytype){
+    echo($mytype);
     $array_len++;
 }
 
