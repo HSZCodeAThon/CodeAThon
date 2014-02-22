@@ -1,60 +1,14 @@
-<script>
-//Display a confirmation box when trying to delete an object
-function showConfirm(id)
-{
-    // build the confirmation box
-    var c = confirm("Are you sure you wish to delete this item?");
-    
-    // if true, delete item and refresh
-    if(c)
-        window.location = "CoffeeOverview.php?delete=" + id;
-}
-</script>
-
 <?php
+
 require ("Model/CoffeeModel.php");
 
 //Contains non-database related function for the Coffee page
 class CoffeeController {
 
-    function CreateOverviewTable() {
-        $result = "
-            <table class='overViewTable'>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><b>Id</b></td>
-                    <td><b>Name</b></td>
-                    <td><b>Family</b></td>
-                    <td><b>Sex</b></td>
-                    <td><b>Parents</b></td>
-                    <td><b>Country</b></td>
-                </tr>";
-
-        $coffeeArray = $this->GetCoffeeByType('%');
-
-        foreach ($coffeeArray as $key => $value) {
-            $result = $result .
-                    "<tr>
-                        <td><a href='CoffeeAdd.php?update=$value->id'>Update</a></td>
-                        <td><a href='#' onclick='showConfirm($value->id)'>Delete</a></td>
-                        <td>$value->id</td>
-                        <td>$value->name</td>
-                        <td>$value->family</td>    
-                        <td>$value->sex</td> 
-                        <td>$value->parents</td>
-                        <td>$value->country</td>   
-                    </tr>";
-        }
-
-        $result = $result . "</table>";
-        return $result;
-    }
-
     function CreateCoffeeDropdownList() {
         $coffeeModel = new CoffeeModel();
         $result = "<form action = '' method = 'post' width = '200px'>
-                    Please select a panda family: 
+                    Please select a type: 
                     <select name = 'types' >
                         <option value = '%' >All</option>
                         " . $this->CreateOptionValues($this->GetCoffeeTypes()) .
@@ -91,22 +45,22 @@ class CoffeeController {
                         </tr>
                         
                         <tr>
-                            <th>Family: </th>
-                            <td>$coffee->family</td>
+                            <th>Type: </th>
+                            <td>$coffee->type</td>
                         </tr>
                         
                         <tr>
-                            <th>Sex: </th>
-                            <td>$coffee->sex</td>
+                            <th>Price: </th>
+                            <td>$coffee->price</td>
                         </tr>
                         
                         <tr>
-                            <th>Parents: </th>
-                            <td>$coffee->parents</td>
+                            <th>Roast: </th>
+                            <td>$coffee->roast</td>
                         </tr>
                         
                         <tr>
-                            <th>Residence: </th>
+                            <th>Origin: </th>
                             <td>$coffee->country</td>
                         </tr>
                         
@@ -146,39 +100,27 @@ class CoffeeController {
     //<editor-fold desc="Set Methods">
     function InsertCoffee() {
         $name = $_POST["txtName"];
-        $type = $_POST["ddlFamily"];
-        $sex = $_POST["txtSex"];
-        $parents = $_POST["txtParents"];
+        $type = $_POST["ddlType"];
+        $price = $_POST["txtPrice"];
+        $roast = $_POST["txtRoast"];
         $country = $_POST["txtCountry"];
         $image = $_POST["ddlImage"];
         $review = $_POST["txtReview"];
 
-        $coffee = new CoffeeEntity(-1, $name, $type, $sex, $parents, $country, $image, $review);
+        $coffee = new CoffeeEntity(-1, $name, $type, $price, $roast, $country, $image, $review);
         $coffeeModel = new CoffeeModel();
         $coffeeModel->InsertCoffee($coffee);
     }
 
     function UpdateCoffee($id) {
-        $name = $_POST["txtName"];
-        $type = $_POST["ddlFamily"];
-        $sex = $_POST["txtSex"];
-        $parents = $_POST["txtParents"];
-        $country = $_POST["txtCountry"];
-        $image = $_POST["ddlImage"];
-        $review = $_POST["txtReview"];
-
-        $coffee = new CoffeeEntity($id, $name, $type, $sex, $parents, $country, $image, $review);
-        $coffeeModel = new CoffeeModel();
-        $coffeeModel->UpdateCoffee($id, $coffee);
+        
     }
 
-    function DeleteCoffee($id) 
-    {
-        $coffeeModel = new CoffeeModel();
-        $coffeeModel->DeleteCoffee($id);
+    function DeleteCoffee($id) {
+        
     }
-
     //</editor-fold>
+    
     //<editor-fold desc="Get Methods">
     function GetCoffeeById($id) {
         $coffeeModel = new CoffeeModel();
@@ -194,7 +136,7 @@ class CoffeeController {
         $coffeeModel = new CoffeeModel();
         return $coffeeModel->GetCoffeeTypes();
     }
-
     //</editor-fold>
 }
+
 ?>

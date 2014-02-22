@@ -1,58 +1,55 @@
 <?php
 
-require ("Entities/CoffeeEntity.php");
+require ("Entities/StoreEntity.php");
 
 //Contains database related code for the Coffee page.
-class CoffeeModel {
+class StoreModel {
 
     //Get all coffee types from the database and return them in an array.
-    function GetCoffeeTypes() {
+    function GetStoreDistance() {
         require ('Credentials.php');
         //Open connection and Select database.   
         mysql_connect($host, $user, $passwd) or die(mysql_error());
-        mysql_select_db($database);
-        $result = mysql_query("SELECT DISTINCT type FROM coffee") or die(mysql_error());
-        $types = array();
+        mysql_select_db($shopdb);
+        $result = mysql_query("SELECT DISTINCT distance FROM storedistance") or die(mysql_error());
+        $range = array();
 
         //Get data from database.
         while ($row = mysql_fetch_array($result)) {
-            array_push($types, $row[0]);
+            array_push($range, $row[0]);
         }
 
         //Close connection and return result.
         mysql_close();
-        return $types;
+        return $range;
     }
 
-    //Get coffeeEntity objects from the database and return them in an array.
-    function GetCoffeeByType($distance) {
+    //Get storeEntity objects from the database and return them in an array.
+    function GetStoreByDistance($distance) {
         require ('Credentials.php');
         //Open connection and Select database.     
         mysql_connect($host, $user, $passwd) or die(mysql_error);
         mysql_select_db($shopdb);
-
-        $query = "SELECT * FROM coffee WHERE type LIKE '$type'";
+        if($distance!= '%')
+            $query = "SELECT * FROM storedistance WHERE distance = $distance ";
+        else
+            $query = "SELECT * FROM storedistance";
         $result = mysql_query($query) or die(mysql_error());
-        $coffeeArray = array();
+        $storeArray = array();
 
         //Get data from database.
         while ($row = mysql_fetch_array($result)) {
             $id = $row[0];
             $name = $row[1];
-            $type = $row[2];
-            $price = $row[3];
-            $roast = $row[4];
-            $country = $row[5];
-            $image = $row[6];
-            $review = $row[7];
-
-            //Create coffee objects and store them in an array.
-            $coffee = new CoffeeEntity($id, $name, $type, $price, $roast, $country, $image, $review);
-            array_push($coffeeArray, $coffee);
+            $distance = $row[2];
+            $image = $row[3];
+            //Create store objects and store them in an array.
+            $store = new storeEntity($id, $name, $distance, $image);
+            array_push($storeArray, $store);
         }
         //Close connection and return result
         mysql_close();
-        return $coffeeArray;
+        return $storeArray;
     }
 
     function GetCoffeeById($id) {

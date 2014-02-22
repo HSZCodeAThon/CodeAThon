@@ -15,7 +15,7 @@ else
 }
 
 //Output page data
-$title = 'Panda overview';
+$title = 'Coffee overview';
 $content = $coffeeController->CreateCoffeeDropdownList(). $coffeeTables;
 
 include 'Template.php';

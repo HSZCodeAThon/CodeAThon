@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/yang/Desktop/cat/CodeAThon/CoffeeWebsite/Controller/CoffeeController.php</file>
-        <file>file:/home/yang/Desktop/cat/CodeAThon/CoffeeWebsite/CoffeeAdd.php</file>
-        <file>file:/home/yang/Desktop/cat/CodeAThon/CoffeeWebsite/Model/CoffeeModel.php</file>
-        <file>file:/home/yang/Desktop/cat/CodeAThon/CoffeeWebsite/Entities/CoffeeEntity.php</file>
-        <file>file:/home/yang/Desktop/cat/CodeAThon/CoffeeWebsite/Coffee.php</file>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/wamp/www/CoffeeWeb/Model/Credentials.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/index.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Template.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Management.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Coffee.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/CoffeeAdd.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Entities/CoffeeEntity.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Model/CoffeeModel.php</file>
+            <file>file:/E:/wamp/www/CoffeeWeb/Controller/CoffeeController.php</file>
+        </group>
     </open-files>
 </project-private>

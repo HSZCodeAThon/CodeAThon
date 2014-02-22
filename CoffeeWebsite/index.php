@@ -1,7 +1,7 @@
 <?php
 $title = "Home";
 $content = '
-        <img src="Images/panda1.jpg" class="imgLeft" />
+        <img src="Images/coffee1.png" class="imgLeft" />
         <h3>Title 1</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lectus urna,
@@ -12,7 +12,7 @@ $content = '
             Vestibulum consectetur cursus dui sit amet pretium.
         </p>
 
-        <img src="Images/panda22.jpg" class="imgRight" />
+        <img src="Images/coffee2.png" class="imgRight" />
         <h3>Title 2</h3>
         <p>
             Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -27,7 +27,7 @@ $content = '
             tincidunt est ac elit bibendum nec varius ante vestibulum.
          </p>
 
-         <img src="Images/panda3.jpg" class="imgLeft" />
+         <img src="Images/coffee3.png" class="imgLeft" />
          <h3>Title 3</h3>
          <p>
             In hac habitasse platea dictumst. In purus leo, consequat nec porta a, varius sed

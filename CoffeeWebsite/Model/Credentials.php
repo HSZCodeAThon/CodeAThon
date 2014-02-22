@@ -4,5 +4,7 @@
 $host = "localhost";
 $user = "root";
 $passwd = "19820815";
-$database = "coffeedb";
+$database = "coffeedatabase";
+
+$shopdb = "bestcart";
 ?>
