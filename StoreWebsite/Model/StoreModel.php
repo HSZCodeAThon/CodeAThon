@@ -51,23 +51,7 @@ class StoreModel {
         mysql_close();
         return $storeArray;
     }
-    function GetItemListByPathList(array $pathlist)
-    {   
-        $itemlist = array();
-        //mysql search operation
-        require ('Credentials.php');
-        mysql_connect($host,$user,$passwd) or die (mysql_error());
-        mysql_select_db($shopdb);
-        foreach ($pathlist as $path)
-        {
-            $query = "SELECT name FROM wholeitemsset WHERE image = $path";
-            $result = mysql_query($query) or die(mysql_error());
-            $row = mysql_fetch_array($result);
-            array_push($itemlist, $row[1]);
-        }
-        mysql_close();
-        return $itemlist;
-    }
+
     function GetCoffeeById($id) {
         require ('Credentials.php');
         //Open connection and Select database.     

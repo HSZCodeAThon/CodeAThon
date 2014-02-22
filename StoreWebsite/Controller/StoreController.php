@@ -1,39 +1,21 @@
 <?php
 
 require ("Model/StoreModel.php");
-require ("Entities/ShoppingListEntity.php");
 
 //Contains non-database related function for the Coffee page
 class StoreController {
 
-    public $shoppinglist;
-    function CreateShoppingList(array $pathlist)//half done
-    {
-        $this->shoppinglistentity = new ShoppingListEntity();
-        $storemodel = new StoreModel();
-        $namelist = array();
-        $namelist = $storemodel->GetItemListByPathList($pathlist);
-        foreach ($namelist as $name)
-        {
-            array_push($this->shoppinglistentity->shoppinglist,$name);
-        }
-        $result="";
-        foreach ($this->shoppinglistentity->shoppinglist as $name)
-        {
-            $result =$result."$name";
-        }
-        return $result;
-    }
     function CreateStoreDropdownList() {
         $StoreModel = new StoreModel();
-        $result = "<form action = '' method = 'post' width = '400px'>
-                    Please select a range in miles: 
-                   <select name = 'distance'>
-                        <option value = '%' >All</option>
+        $result = '   <form action = "" method = "post" width = "400px">
+                        Please select a range in miles: 
+                         <select name = "distance">
+                        <option value = "%" >All</option>
                         " . $this->CreateOptionValues($this->GetStoreDistance()) .
-                    "</select>
-                     <input type = 'submit' value = 'Search Store' />
-                    </form>";
+                        "</select>
+                        <input type = "submit" value ="Search Store">
+                        </form>';
+                
 
         return $result;
     }
@@ -42,12 +24,12 @@ class StoreController {
         $result = "";
 
         foreach ($valueArray as $value) {
-            $result = $result . "<option value='$value'>$value</option>";
+            $result = $result . '<option value="$value">$value</option>';
         }
         return $result;
     }
 
-    function CreateStoreTable($distance) {//done
+    function CreateStoreTable($distance) {
         $storeModel = new StoreModel();
         $storeArray = $storeModel->GetStoreByDistance($distance);
         $result = "";
@@ -58,7 +40,7 @@ class StoreController {
             $result = $result .
                     "<table class = 'coffeeTable'>
                         <tr>
-                            <th rowspan='6' width = '150px' ><img runat = 'server' src = '$store->image' /></th>
+                            <th rowspan='6' width = '150px' ><img runat = 'server' src = '$store->image' width='100'></th>
                             <th width = '150px' >Store Name: </th>
                             <td>$store->name</td>
                         </tr>
