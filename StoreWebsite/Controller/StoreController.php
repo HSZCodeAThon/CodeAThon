@@ -6,7 +6,7 @@ require ("Entities/ShoppingListEntity.php");
 //Contains non-database related function for the Coffee page
 class StoreController {
 
-    public $shoppinglist;
+    public $shoppinglistentity;
     function CreateShoppingList(array $pathlist)//half done
     {
         $this->shoppinglistentity = new ShoppingListEntity();
@@ -24,6 +24,10 @@ class StoreController {
         }
         return $result;
     }
+    function GetShoppingListentity()
+    {
+        return $this->shoppinglistentity;
+    }
     function CreateStoreDropdownList() {
         $StoreModel = new StoreModel();
         $result = "<form action = '' method = 'post' width = '400px'>
@@ -37,7 +41,26 @@ class StoreController {
 
         return $result;
     }
-
+    function GetShoppingListContent()
+    {
+        $storeController = new StoreController();
+        $shoppinglist = array();
+        $shoppinglist = $storeController->GetShoppingListentity();
+        $result = "";
+        $i = 0;
+        foreach ($shoppinglist as $item)
+        {
+            $i++;
+            $result = $result.
+                    "<table>"."<tr>".
+                    "<th>$i</th>".
+                    "<th>$item</th>"
+                    . "</tr>"
+                    . "</table>";
+        }
+        $content ="";
+        $content = $resutl;
+    }
     function CreateOptionValues(array $valueArray) {//done
         $result = "";
 
