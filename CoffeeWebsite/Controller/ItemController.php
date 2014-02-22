@@ -1,7 +1,6 @@
 <?php
-require ("Entities/ItemEntity.php");
-require ("Model/ItemModel.php");
-
+require ('Entities/ItemEntity.php');
+require ('Model/ItemModel.php');
 
 /**
  * Description of ItemController
@@ -10,6 +9,7 @@ require ("Model/ItemModel.php");
  */
 class ItemController {
     
+   /* 
     function CreateItemsMenu(){
         $myItemModel = new ItemModel();
         $item_name_array = array();
@@ -45,7 +45,7 @@ class ItemController {
 
         $col_lgs = join('', $col_lg_array);
         return  $col_lgs;
-    }
+    }*/
 
 }
 

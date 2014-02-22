@@ -18,13 +18,15 @@ class ItemEntity {
     public $category;
    
     
-    function __construct($id, $name,  $image, $category) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->image = $image;
-        $this->category = $category;
+    function __construct($_id, $_name, $_image, $_category) {
+        $this->id = $_id;
+        $this->name = $_name;
+        $this->image = $_image;
+        $this->category = $_category;
         
     }
+
+   
 }
 
 ?>

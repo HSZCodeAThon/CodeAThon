@@ -133,7 +133,7 @@
             
             </div>
         <div class="container marketing">
-             <h2 class="itemsTitle">Vegetables</h2>
+             <h2 class="itemsTitle">Vegetables &amp; Fruits</h2>
       
             <div id="myCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">                   
