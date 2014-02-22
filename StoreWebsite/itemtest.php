@@ -1,7 +1,7 @@
 <?php
 require './Controller/StoreController.php';
 $storeController = new StoreController();
-    $content ='<form action="" method="post">
+    $content ='<form action="SelectedShoppingList.php" method="post">
                  <fieldset>
                   <img src="Images/bestcart/items/apple.jpg" class="imgLeft" />
                   <input type="checkbox" name="items[]" value="Images/bestcart/items/apple.jpg" />apple<br />
@@ -26,15 +26,16 @@ $itemnamelist = $_POST['items'];
   }
   else
   {
-      $result = $storeController->CreateShoppingList($itemnamelist);
-      $content = $content."$result";
-//    $N = count($aDoor);
+//    $N = count($itemnamelist);
 // 
 //    echo("You selected $N door(s): ");
 //    for($i=0; $i < $N; $i++)
 //    {
-//      echo($aDoor[$i] . " ");
+//      echo($itemnamelist[$i] . " ");
 //    }
+      $result = $storeController->CreateShoppingList($itemnamelist);
+      $content = "$result";
+
   }
 }
 include './Template.php';

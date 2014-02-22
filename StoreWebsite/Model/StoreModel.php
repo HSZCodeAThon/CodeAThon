@@ -51,7 +51,7 @@ class StoreModel {
         mysql_close();
         return $storeArray;
     }
-    function GetItemListByPathList(array $pathlist)
+    function GetItemListByPathList(array $pathlist)//done
     {   
         $itemlist = array();
         //mysql search operation
@@ -60,10 +60,10 @@ class StoreModel {
         mysql_select_db($shopdb);
         foreach ($pathlist as $path)
         {
-            $query = "SELECT name FROM wholeitemsset WHERE image = $path";
+            $query = "SELECT name FROM wholeitemsset WHERE image = '$path'";
             $result = mysql_query($query) or die(mysql_error());
             $row = mysql_fetch_array($result);
-            array_push($itemlist, $row[1]);
+            array_push($itemlist, $row[0]);
         }
         mysql_close();
         return $itemlist;
