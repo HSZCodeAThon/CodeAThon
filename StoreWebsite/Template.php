@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD:CoffeeWebsite/Template.php
 
     <title><?php echo $title; ?></title>
     <meta charset="utf-8">
@@ -26,6 +27,11 @@
 
     <!-- Custom styles for this template -->
     <link href="themes/assets/css/carousel.css" rel="stylesheet">
+=======
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><?php echo $title; ?></title>
+        <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
+>>>>>>> origin/huang:StoreWebsite/Template.php
     </head>
     
     <body>
@@ -43,6 +49,7 @@
               </button>
               <a class="navbar-brand" href="index.html">Best Cart</a>
             </div>
+<<<<<<< HEAD:CoffeeWebsite/Template.php
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a></li>
@@ -50,6 +57,24 @@
                  <!--li><a href="StoreOption.php">Store Selection</a></li-->
                 <li><a href="itemtest.php">Items</a></li>
                 <!--li><a href="contact.html">Contact</a></li-->
+=======
+            
+            <nav id="navigation">
+                <ul id="nav">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="StoreOption.php">Coffee</a></li>
+                    <li><a href="itemtest.php">Items</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="Management.php">Management</a></li>
+                </ul>
+            </nav>
+            
+            <div id="content_area">
+                <?php echo $content; ?>
+            </div>
+            
+            <div id="sidebar">
+>>>>>>> origin/huang:StoreWebsite/Template.php
                 
               </ul>
             </div>
