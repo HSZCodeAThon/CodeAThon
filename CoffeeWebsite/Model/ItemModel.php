@@ -20,7 +20,7 @@ class ItemModel {
         $result = mysql_query($query) or die(mysql_error());
         $items_array = array();
         while($row = mysql_fetch_array($result)){         
-            
+            //echo($row[0]);
             array_push($items_array, $row[0]);
         }
         return $items_array;
@@ -36,7 +36,7 @@ class ItemModel {
         $result = mysql_query($query) or die(mysql_error());
         $items_array = array();
         while($row = mysql_fetch_array($result)){         
-           
+            //echo($row[0]);
             array_push($items_array, $row[0]);
         }
         return $items_array;

@@ -1,41 +1,74 @@
 <?php
-$title = "Home";
-$content = '
-        <img src="Images/coffee1.png" class="imgLeft" />
-        <h3>Title 1</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lectus urna,
-            viverra in luctus quis, ullamcorper quis lorem. Vestibulum vulputate pellentesque
-            velit, et placerat dolor pulvinar in. Class aptent taciti sociosqu ad litora torquent
-            per conubia nostra, per inceptos himenaeos. Sed sit amet velit at purus elementum
-            dapibus. Nulla dapibus auctor vulputate. Sed cursus nisi at mauris mollis semper.
-            Vestibulum consectetur cursus dui sit amet pretium.
+
+require 'Model/ItemModel.php';
+
+$myItemModel = new ItemModel();
+$item_name_array = array();
+$itemurl_array = array();
+$item_name_array =  $myItemModel->GetItemsNameArrayFromTable();
+$array_len = 0;
+foreach ($item_name_array as $myname){
+    //echo($myname);
+    $array_len++;
+}
+
+$itemurl_array =  $myItemModel->GetItemsUrlArrayFromTable();
+
+$title = 'home';
+
+$formstart = "<form action='' method='post'>";
+$col_lg_array = array();
+
+for($i =0; $i<3; $i++){
+    array_push($col_lg_array, "<div class='col-lg-4'>  
+        <fieldset>
+        <img src='$itemurl_array[$i]' alt='item' height='277'>
+        <h4> $item_name_array[$i] </h4>
+        <p><a class='btn btn-default' href='#' role='button'>Add to cart 
+            <input type='checkbox' name='items[]' value='$itemurl_array[$i]'> </a>
         </p>
+        </fieldset>
+        </div>"); 
+    
+}
 
-        <img src="Images/coffee2.png" class="imgRight" />
-        <h3>Title 2</h3>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos. Donec porttitor placerat nunc a consectetur. Ut fermentum eleifend molestie.
-            Donec fermentum risus sit amet ante cursus cursus. In hac habitasse platea dictumst.
-            Praesent semper ante ut felis molestie aliquet. Nam quis dui a magna molestie blandit
-            id et justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Sed felis mauris, mattis a vulputate a, gravida nec metus.
-            Vivamus elit augue, ullamcorper eget scelerisque vitae, tincidunt eget lorem. Curabitur
-            id nibh libero, sed pulvinar nisi. Curabitur ultrices, neque in dignissim viverra,
-            justo nisl dignissim magna, a tempor eros turpis in diam. Suspendisse potenti. Sed
-            tincidunt est ac elit bibendum nec varius ante vestibulum.
-         </p>
+$itemsmenu = implode(" ", $col_lg_array);
+$col_lg_array2 = array();
 
-         <img src="Images/coffee3.png" class="imgLeft" />
-         <h3>Title 3</h3>
-         <p>
-            In hac habitasse platea dictumst. In purus leo, consequat nec porta a, varius sed
-            dui. Nulla placerat mollis tincidunt. Praesent at elit mi, a posuere quam. Suspendisse
-            vel leo eu orci lacinia vestibulum. Fusce vel sem fermentum lectus tempus ultrices.
-            Morbi arcu sem, rhoncus sit amet rutrum eget, interdum sit amet leo. Ut mattis lorem
-            vitae dolor tincidunt mattis a lacinia velit. Cras sed nibh at urna imperdiet laoreet
-            quis a risus.
-         </p>';
+for($i =3; $i<6; $i++){
+    array_push($col_lg_array2, "<div class='col-lg-4'>  
+        <fieldset>
+        <img src='$itemurl_array[$i]' alt='item' height='277'>
+        <h4> $item_name_array[$i] </h4>
+        <p><a class='btn btn-default' href='#' role='button'>Add to cart 
+            <input type='checkbox' name='items[]' value='$itemurl_array[$i]'> </a>
+        </p>
+        </fieldset>
+        </div>"); 
+    
+}
+
+$itemsmenu2 = implode(" ", $col_lg_array2);
+
+$col_lg_array3 = array();
+
+for($i =6; $i<9; $i++){
+    array_push($col_lg_array3, "<div class='col-lg-4'>  
+        <fieldset>
+        <img src='$itemurl_array[$i]' alt='item' height='277'>
+        <h4> $item_name_array[$i] </h4>
+        <p><a class='btn btn-default' href='#' role='button'>Add to cart 
+            <input type='checkbox' name='items[]' value='$itemurl_array[$i]'> </a>
+        </p>
+        </fieldset>
+        </div>"); 
+    
+}
+
+$itemsmenu3 = implode(" ", $col_lg_array3);
+
+$formend ='<input type="submit" name="formSubmit" value="Submit"></form> ';
+
+
 include 'Template.php';
 ?>

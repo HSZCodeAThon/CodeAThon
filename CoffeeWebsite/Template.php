@@ -92,7 +92,7 @@
 			  google.maps.event.addDomListener(window, 'load',
 			  initialize);
 			</script>
-			<div id="googleMap" style="margin: auto; height:450px;
+			<div id="googleMap" style="margin: auto; height:400px;
 			width:1170px;"></div>
 			
 			</div>
@@ -105,43 +105,49 @@
     the page in another container to center all the content. -->
     <div id="content_area"> 
         <!--?php echo $content; ?-->
-     
+        <?php echo $formstart; ?>
         <div class="container marketing">
+             <h2 class="itemsTitle">Sea Food</h2>
+            
             <div id="myCarousel1" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner">                   
                     <div class="item active">
-                      <div class="row">
-                          <?php echo $formstart; ?>
-                          <?php echo $col_lgs; ?>
-                          <?php echo $formend; ?>
-                       
-                          <?php echo $content; ?>
-                        <!--div class="col-lg-4">
-                          <img src="themes/assets/images/salmon.jpg" alt="1" height="277">
-                          <h4>Salmon</h4>
-                          <p><a class="btn btn-default" href="#"
-                                role="button">Add to cart &raquo;</a></p>
+                        <div class="row">                        
+                          <?php echo($itemsmenu) ?>       
                         </div>
-                        <div class="col-lg-4">
-                          <img src="themes/assets/images/tuna.png" alt="2" height="277">
-                          <h4>Tuna</h4>
-                          <p><a class="btn btn-default" href="#"
-                                role="button">Add to cart &raquo;</a></p>
-                        </div>
-                        <div class="col-lg-4">
-                          <img src="themes/assets/images/swardfish.jpg" alt="3" height="277">
-                          <h4>Swardfish</h4>
-                          <p><a class="btn btn-default" href="#"
-                                role="button">Add to cart &raquo;</a></p>
-                        </div-->
-                      </div>
-
                     </div>
-
-                    </div> 
+                     <div class="item">
+                        <div class="row">                        
+                          <?php echo($itemsmenu2) ?>       
+                        </div>
+                    </div>
+                      <div class="item">
+                        <div class="row">                        
+                          <?php echo($itemsmenu3) ?>       
+                        </div>
+                    </div>
+                 </div> 
+                 <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                 <a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div> 
+            
+            </div>
+        <div class="container marketing">
+             <h2 class="itemsTitle">Vegetables</h2>
+      
+            <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">                   
+                    
+                 </div> 
+                 <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                 <a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div> 
+           
             </div>
         </div>
+         <?php echo $formend; ?>  
+        </div>
+    
 	<div class="highlightSection">
 	<div class="container">
 	<div class="row">
